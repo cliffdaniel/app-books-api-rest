@@ -49,7 +49,6 @@ module.exports = [
     },
   },
   {
-    // Configuración adicional que se necesita sin 'extends'
     languageOptions: {
       parser: tsParser,
       parserOptions: {
@@ -64,8 +63,8 @@ module.exports = [
       'unused-imports': unusedImports,
     },
     rules: {
-      ...eslintNestJs.rules, // Incluir reglas de eslint-config-nestjs
-      ...prettier.rules, // Incluir reglas de eslint-config-prettier
+      ...eslintNestJs.rules,
+      ...prettier.rules,
     },
   },
 ];

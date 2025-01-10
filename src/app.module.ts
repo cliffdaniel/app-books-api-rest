@@ -1,10 +1,18 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+
+import { MongooseConfig } from './config/mongoose.config';
+import { AuthorsModule } from './modules/authors/authors.module';
+import { BooksModule } from './modules/books/books.module';
+import { DatabaseModule } from './modules/database/database.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+    imports: [
+        MongooseConfig,
+        BooksModule,
+        AuthorsModule,
+        DatabaseModule,
+    ],
+    controllers: [],
+    providers: [],
 })
 export class AppModule {}
