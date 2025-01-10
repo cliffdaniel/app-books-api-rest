@@ -25,7 +25,7 @@ export class MongooseAuthorRepository implements AuthorRepository {
 
     async findAll(): Promise<Author[]> {
         return this.authorModel.find({ status: 'ACTIVE' }).populate('books').exec();
-    }    
+    }
 
     async softDelete(id: string): Promise<void> {
         await this.authorModel.findByIdAndUpdate(id, { status: StatusValue.INACTIVE }).exec();

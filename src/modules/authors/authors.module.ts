@@ -9,9 +9,7 @@ import { MongooseAuthorRepository } from './infrastructure/repositories/mongoose
 import { AuthorSchema } from './infrastructure/schemas/author.schema';
 
 @Module({
-    imports: [
-        MongooseModule.forFeature([{ name: 'Author', schema: AuthorSchema }]),
-    ],
+    imports: [MongooseModule.forFeature([{ name: 'Author', schema: AuthorSchema }])],
     controllers: [AuthorController],
     providers: [
         {
@@ -20,7 +18,7 @@ import { AuthorSchema } from './infrastructure/schemas/author.schema';
         },
         CreateAuthorUseCase,
         ListAuthorsUseCase,
-        UpdateAuthorBooksUseCase
+        UpdateAuthorBooksUseCase,
     ],
     exports: [CreateAuthorUseCase, ListAuthorsUseCase, UpdateAuthorBooksUseCase],
 })

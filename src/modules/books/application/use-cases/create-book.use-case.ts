@@ -22,9 +22,7 @@ export class CreateBookUseCase {
 
         const authorIds = await Promise.all(
             createBookDto.authors.map(async (authorName) => {
-                const existingAuthor = existingAuthors.find(
-                    (author) => author.name === authorName,
-                );
+                const existingAuthor = existingAuthors.find((author) => author.name === authorName);
 
                 if (existingAuthor) {
                     return existingAuthor.id;
@@ -50,11 +48,7 @@ export class CreateBookUseCase {
 
         const createdBook = await this.bookRepository.create(book);
 
-        await Promise.all(
-            authorIds.map((authorId) =>
-                this.updateAuthorBooksUseCase.execute(authorId, createdBook.id),
-            ),
-        );
+        await Promise.all(authorIds.map((authorId) => this.updateAuthorBooksUseCase.execute(authorId, createdBook.id)));
 
         return createdBook;
     }

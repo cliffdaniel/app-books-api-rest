@@ -5,9 +5,7 @@ import { BookRepository } from '../../domain/repositories/book.repository';
 
 @Injectable()
 export class SoftDeleteBookUseCase {
-    constructor(
-        @Inject('BookRepository') private readonly bookRepository: BookRepository,
-    ) {}
+    constructor(@Inject('BookRepository') private readonly bookRepository: BookRepository) {}
 
     async execute(id: string): Promise<void> {
         const book = await this.bookRepository.findById(id);

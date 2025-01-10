@@ -13,6 +13,5 @@ export class Book {
 
     deactivate(): void {
         this.status = StatusValue.INACTIVE;
-
     }
 }

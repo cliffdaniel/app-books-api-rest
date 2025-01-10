@@ -6,12 +6,7 @@ import { BooksModule } from './modules/books/books.module';
 import { DatabaseModule } from './modules/database/database.module';
 
 @Module({
-    imports: [
-        MongooseConfig,
-        BooksModule,
-        AuthorsModule,
-        DatabaseModule,
-    ],
+    imports: [MongooseConfig, BooksModule, AuthorsModule, DatabaseModule],
     controllers: [],
     providers: [],
 })

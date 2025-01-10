@@ -11,10 +11,7 @@ import { MongooseBookRepository } from './infrastructure/repositories/mongoose-b
 import { BookSchema } from './infrastructure/schemas/book.schema';
 
 @Module({
-    imports: [
-        MongooseModule.forFeature([{ name: 'Book', schema: BookSchema }]),
-        AuthorsModule,
-    ],
+    imports: [MongooseModule.forFeature([{ name: 'Book', schema: BookSchema }]), AuthorsModule],
     controllers: [BookController],
     providers: [
         {
@@ -24,7 +21,7 @@ import { BookSchema } from './infrastructure/schemas/book.schema';
         CreateBookUseCase,
         ListBooksUseCase,
         GetAveragePagesUseCase,
-        SoftDeleteBookUseCase
+        SoftDeleteBookUseCase,
     ],
 })
 export class BooksModule {}

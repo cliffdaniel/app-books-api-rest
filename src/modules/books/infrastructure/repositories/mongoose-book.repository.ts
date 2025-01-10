@@ -30,7 +30,7 @@ export class MongooseBookRepository implements BookRepository {
 
     async findAveragePages(): Promise<{ book: Book; average: number }[]> {
         const books = await this.bookModel.find({ status: 'ACTIVE' }).exec();
-    
+
         return books.map((book) => ({
             book: new Book(
                 book._id.toString(),
@@ -43,7 +43,7 @@ export class MongooseBookRepository implements BookRepository {
             ),
             average: parseFloat((book.pages / book.chapters).toFixed(2)),
         }));
-    }    
+    }
 
     async findById(id: string): Promise<Book | null> {
         const bookDocument = await this.bookModel.findOne({ _id: id, status: StatusValue.ACTIVE }).exec();
@@ -63,14 +63,16 @@ export class MongooseBookRepository implements BookRepository {
     }
 
     async update(id: string, book: Book): Promise<void> {
-        await this.bookModel.findByIdAndUpdate(id, {
-            title: book.title,
-            chapters: book.chapters,
-            pages: book.pages,
-            publicationYear: book.publicationYear,
-            status: book.status,
-            authors: book.authors,
-        }).exec();
+        await this.bookModel
+            .findByIdAndUpdate(id, {
+                title: book.title,
+                chapters: book.chapters,
+                pages: book.pages,
+                publicationYear: book.publicationYear,
+                status: book.status,
+                authors: book.authors,
+            })
+            .exec();
     }
 
     async softDelete(id: string): Promise<void> {

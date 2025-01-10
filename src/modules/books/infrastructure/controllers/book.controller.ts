@@ -14,7 +14,7 @@ export class BookController {
         private readonly createBookUseCase: CreateBookUseCase,
         private readonly listBooksUseCase: ListBooksUseCase,
         private readonly getAveragePagesUseCase: GetAveragePagesUseCase,
-        private readonly softDeleteBookUseCase: SoftDeleteBookUseCase
+        private readonly softDeleteBookUseCase: SoftDeleteBookUseCase,
     ) {}
 
     @Post()
@@ -29,10 +29,7 @@ export class BookController {
     @ApiQuery({ name: 'page', required: false, type: Number, description: 'Número de página' })
     @ApiQuery({ name: 'limit', required: false, type: Number, description: 'Cantidad de resultados por página' })
     @ApiResponse({ status: 200, description: 'Lista de libros activos.' })
-    async findAll(
-        @Query('page') page: number = 1,
-        @Query('limit') limit: number = 10,
-    ) {
+    async findAll(@Query('page') page: number = 1, @Query('limit') limit: number = 10) {
         return this.listBooksUseCase.execute({ page, limit });
     }
 
