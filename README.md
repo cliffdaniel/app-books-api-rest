@@ -8,7 +8,7 @@
 
 ---
 
-## **Instrucciones para el Cliente**
+## **Instrucciones**
 
 ### **Requisitos**
 
