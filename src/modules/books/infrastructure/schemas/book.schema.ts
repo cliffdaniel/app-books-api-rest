@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { Document } from 'mongoose';
 
-import { Author } from '../../../authors/infrastructure/schemas/author.schema';
+import { Author } from '@/modules/authors/infrastructure/schemas/author.schema';
 
 @Schema()
 export class Book extends Document {

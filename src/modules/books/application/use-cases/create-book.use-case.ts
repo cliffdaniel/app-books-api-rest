@@ -1,11 +1,12 @@
 import { Injectable, Inject } from '@nestjs/common';
 
-import { CreateAuthorUseCase } from '../../../authors/application/use-cases/create-author.use-case';
-import { ListAuthorsUseCase } from '../../../authors/application/use-cases/list-authors.use-case';
-import { UpdateAuthorBooksUseCase } from '../../../authors/application/use-cases/update-author-books.use-case';
-import { Book } from '../../domain/entities/book.entity';
-import { BookRepository } from '../../domain/repositories/book.repository';
 import { CreateBookDto } from '../dto/create-book.dto';
+
+import { CreateAuthorUseCase } from '@/modules/authors/application/use-cases/create-author.use-case';
+import { ListAuthorsUseCase } from '@/modules/authors/application/use-cases/list-authors.use-case';
+import { UpdateAuthorBooksUseCase } from '@/modules/authors/application/use-cases/update-author-books.use-case';
+import { Book } from '@/modules/books/domain/entities/book.entity';
+import { BookRepository } from '@/modules/books/domain/repositories/book.repository';
 
 @Injectable()
 export class CreateBookUseCase {

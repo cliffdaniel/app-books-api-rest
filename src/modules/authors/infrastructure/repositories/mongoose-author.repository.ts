@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
-import { StatusValue } from '../../../../shared/domain/values/status.value';
-import { Author } from '../../domain/entities/author.entity';
-import { AuthorRepository } from '../../domain/repositories/author.repository';
+import { Author } from '@/modules/authors/domain/entities/author.entity';
+import { AuthorRepository } from '@/modules/authors/domain/repositories/author.repository';
+import { StatusValue } from '@/shared/domain/values/status.value';
 
 @Injectable()
 export class MongooseAuthorRepository implements AuthorRepository {

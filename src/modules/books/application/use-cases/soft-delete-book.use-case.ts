@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 
-import { NotFoundException } from '../../../../shared/exceptions/not-found.exception';
-import { BookRepository } from '../../domain/repositories/book.repository';
+import { BookRepository } from '@/modules/books/domain/repositories/book.repository';
+import { NotFoundException } from '@/shared/exceptions/not-found.exception';
 
 @Injectable()
 export class SoftDeleteBookUseCase {

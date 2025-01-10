@@ -18,7 +18,7 @@ export class ErrorInterceptor implements NestInterceptor {
                     return throwError(() => error);
                 }
 
-                console.error('Unhandled error:', error); // Log de errores
+                console.error('Unhandled error:', error);
                 return throwError(
                     () => new InternalServerErrorException('Something went wrong. Please try again later.'),
                 );

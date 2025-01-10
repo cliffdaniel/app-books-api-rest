@@ -1,11 +1,11 @@
 import { Controller, Post, Get, Body, Query, Delete, Param } from '@nestjs/common';
 import { ApiTags, ApiResponse, ApiQuery, ApiParam, ApiBody } from '@nestjs/swagger';
 
-import { CreateBookDto } from '../../application/dto/create-book.dto';
-import { CreateBookUseCase } from '../../application/use-cases/create-book.use-case';
-import { GetAveragePagesUseCase } from '../../application/use-cases/get-average-pages.use-case';
-import { ListBooksUseCase } from '../../application/use-cases/list-books.use-case';
-import { SoftDeleteBookUseCase } from '../../application/use-cases/soft-delete-book.use-case';
+import { CreateBookDto } from '@/modules/books/application/dto/create-book.dto';
+import { CreateBookUseCase } from '@/modules/books/application/use-cases/create-book.use-case';
+import { GetAveragePagesUseCase } from '@/modules/books/application/use-cases/get-average-pages.use-case';
+import { ListBooksUseCase } from '@/modules/books/application/use-cases/list-books.use-case';
+import { SoftDeleteBookUseCase } from '@/modules/books/application/use-cases/soft-delete-book.use-case';
 
 @ApiTags('Books')
 @Controller('books')

@@ -1,9 +1,10 @@
 import { Controller, Post, Get, Body } from '@nestjs/common';
 import { ApiTags, ApiResponse, ApiBody } from '@nestjs/swagger';
 
-import { CreateAuthorDto } from '../../application/dto/create-author.dto';
-import { CreateAuthorUseCase } from '../../application/use-cases/create-author.use-case';
-import { ListAuthorsUseCase } from '../../application/use-cases/list-authors.use-case';
+
+import { CreateAuthorDto } from '@/modules/authors/application/dto/create-author.dto';
+import { CreateAuthorUseCase } from '@/modules/authors/application/use-cases/create-author.use-case';
+import { ListAuthorsUseCase } from '@/modules/authors/application/use-cases/list-authors.use-case';
 
 @ApiTags('Authors')
 @Controller('authors')

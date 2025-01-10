@@ -1,4 +1,4 @@
-import { StatusValue } from '../../../../shared/domain/values/status.value';
+import { StatusValue } from '@/shared/domain/values/status.value';
 
 export class Book {
     constructor(

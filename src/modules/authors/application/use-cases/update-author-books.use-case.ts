@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 
-import { AuthorRepository } from '../../domain/repositories/author.repository';
+import { AuthorRepository } from '@/modules/authors/domain/repositories/author.repository';
 
 @Injectable()
 export class UpdateAuthorBooksUseCase {

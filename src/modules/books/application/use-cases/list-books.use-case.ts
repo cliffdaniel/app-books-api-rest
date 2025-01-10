@@ -1,8 +1,9 @@
 import { Injectable, Inject } from '@nestjs/common';
 
-import { Book } from '../../domain/entities/book.entity';
-import { BookRepository } from '../../domain/repositories/book.repository';
 import { PaginationDto } from '../dto/pagination.dto';
+
+import { Book } from '@/modules/books/domain/entities/book.entity';
+import { BookRepository } from '@/modules/books/domain/repositories/book.repository';
 
 @Injectable()
 export class ListBooksUseCase {

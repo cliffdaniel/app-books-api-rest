@@ -13,6 +13,7 @@
     "paths": {
       "@/modules/*": ["modules/*"],
       "@/config/*": ["config/*"],
+      "@/shared/*": ["shared/*"],
     },
     "incremental": true,
     "skipLibCheck": true,
